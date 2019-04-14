@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+April 14th 2019
 
 ### Project Title
-Replace the Project Title
+Explore US Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+This script prompts the curious data analyst to delve into bikeshare data for NYC, Washington D.C., and Chicago. It provides them with stats about common travel times, popular trip locations, the gender of riders and more!
 
 ### Files used
-Include the files used
+bikeshare.py
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Thanks to the Udacity community for help when i was stuck, especially the wonderful Mr. Ronak M!
