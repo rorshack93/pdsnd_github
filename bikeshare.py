@@ -137,14 +137,8 @@ def trip_duration_stats(df):
     t = pd.to_timedelta(df['End Time'] - df['Start Time']).astype('timedelta64[s]')
     total_trip = t.sum()
     print('The total travel time is ' + str(total_trip) + ' seconds')
-<<<<<<< HEAD
-
-||||||| merged common ancestors
-
-=======
 
     # calculates the average travel time in seconds
->>>>>>> documentation
     mean_trip = t.mean()
     print('The average travel time is ' + str(mean_trip) + ' seconds')
 
