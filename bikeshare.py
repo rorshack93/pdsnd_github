@@ -24,44 +24,20 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     print(' ' * 40)
-<<<<<<< HEAD
-
-    # get city selection
-||||||| merged common ancestors
-
-    # get city selection
-=======
 
     # get user's city selection
->>>>>>> documentation
     city = ''
     while city not in cities:
         city = input("Which city's bikeshare data would you like to analyze? Chicago, New York City, or Washington? ").lower()
         print(' ' * 40)
-<<<<<<< HEAD
-
-    # get month selection
-||||||| merged common ancestors
-
-    # get month selection
-=======
 
     # get user's month selection
->>>>>>> documentation
     month = ''
     while month not in months and month != 'All':
         month = input("Which of the first 6 months would you like to analyze? (all, january, february, ... , june) ").capitalize()
         print(' ' * 40)
-<<<<<<< HEAD
-
-    # get day selection
-||||||| merged common ancestors
-
-    # get day selection
-=======
 
     # get user's day selection
->>>>>>> documentation
     day = ''
     while day not in days and day != 'All':
         day = input("Which day of the week would you like to analyze? (all, monday, tuesday, ... sunday) ").capitalize()
