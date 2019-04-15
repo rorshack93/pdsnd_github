@@ -24,19 +24,19 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     print(' ' * 40)
-    
+
     # get city selection
     city = ''
     while city not in cities:
         city = input("Which city's bikeshare data would you like to analyze? Chicago, New York City, or Washington? ").lower()
         print(' ' * 40)
-        
+
     # get month selection
     month = ''
     while month not in months and month != 'All':
         month = input("Which of the first 6 months would you like to analyze? (all, january, february, ... , june) ").capitalize()
         print(' ' * 40)
-        
+
     # get day selection
     day = ''
     while day not in days and day != 'All':
@@ -61,17 +61,17 @@ def load_data(city, month, day):
     # loads csv w/selected city into dataframe
     df = pd.read_csv(CITY_DATA[city])
     df = df.dropna()
-    
+
     # changes the column of start times/end times into datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
-    
+
     # makes 3 new columns, m/d/y
     df['Day of Week'] = df['Start Time'].dt.strftime("%A")
     df['Month'] = df['Start Time'].dt.strftime("%B")
     df['Day'] = df['Start Time'].dt.strftime("%d,")
     df['Year'] = df['Start Time'].dt.strftime("%Y")
-    
+
     if month == 'All' and day == 'All':
         return df
     elif month != 'All' and day == 'All':
@@ -92,27 +92,27 @@ def time_stats(df, month, day):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
+
     # if all months were selected, prints most common month
     if month == 'All':
         print('The most frequent month of travel is ' + df['Start Time'].dt.strftime("%B").mode())
-    
+
     # if all days were selected, prints most common day
     if day == 'All':
         print('The most frequent day of travel is ' + df['Start Time'].dt.strftime("%A").mode())
 
     print('The most frequent start hour of travel is ' + df['Start Time'].dt.strftime("%H").mode())
-          
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
-    
+
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    
+
     print('The most common start station is:')
     print(df['Start Station'].mode())
 
@@ -135,7 +135,7 @@ def trip_duration_stats(df):
     t = pd.to_timedelta(df['End Time'] - df['Start Time']).astype('timedelta64[s]')
     total_trip = t.sum()
     print('The total travel time is ' + str(total_trip) + ' seconds')
-    
+
     mean_trip = t.mean()
     print('The average travel time is ' + str(mean_trip) + ' seconds')
 
@@ -151,13 +151,13 @@ def user_stats(df, city):
 
     print('These are the counts of user types:')
     print(df['User Type'].value_counts())
-    
+
     print('\n')
-    
+
     if city != 'washington':
         print('These are the counts of genders:')
         print(df['Gender'].value_counts())
-        
+
         print('The earliest year of birth is ' + str(df['Birth Year'].min()))
         print('The most recent year of birth is ' + str(df['Birth Year'].max()))
         print('The most common year of birth is ' + str(df['Birth Year'].mode()))
@@ -174,12 +174,12 @@ def view_raw(city):
         i = input('Would you like to see the raw data for ' + city.capitalize() + '? ').lower()
         print(c.head(l))
         l = l + 5
-    
+
 def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-        
+
         time_stats(df , month, day)
         station_stats(df)
         trip_duration_stats(df)
