@@ -14,4 +14,4 @@ new_york_city.csv
 washington.csv
 
 ### Credits
-Thanks to the Udacity community for help when i was stuck, especially the wonderful Mr. Ronak M!
+Thanks to the Udacity community for help when I was stuck, especially the wonderful Mr. Ronak M! Thanks to my friends and family for helping keep my head up!
