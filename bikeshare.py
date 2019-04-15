@@ -72,6 +72,7 @@ def load_data(city, month, day):
     df['Day'] = df['Start Time'].dt.strftime("%d,")
     df['Year'] = df['Start Time'].dt.strftime("%Y")
 
+    # creates dataframe with specified parameters
     if month == 'All' and day == 'All':
         return df
     elif month != 'All' and day == 'All':
