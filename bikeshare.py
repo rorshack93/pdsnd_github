@@ -58,7 +58,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    # loads csv with the selected city into dataframe
+    # loads csv with the selected city into a dataframe
     df = pd.read_csv(CITY_DATA[city])
     df = df.dropna()
 
