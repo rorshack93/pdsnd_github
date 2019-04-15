@@ -5,7 +5,7 @@ April 14th 2019
 Explore US Bikeshare Data
 
 ### Description
-This script prompts the curious data analyst to delve into bikeshare data for NYC, Washington D.C., and Chicago. It provides them with stats about common travel times, popular trip locations, the gender of riders and more!
+This script prompts the curious data analyst to delve into bikeshare data for NYC, Washington D.C., and Chicago. It provides them with stats about common travel times, popular trip locations, the gender of riders and more! It gives different results based on different inputs by the user.
 
 ### Files used
 bikeshare.py
